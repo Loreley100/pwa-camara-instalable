@@ -129,6 +129,19 @@ document.getElementById('btn-apagar-camara').addEventListener('click', () => {
   document.getElementById('btn-apagar-camara').disabled = true;
 });
 
+function verificarEntornoIOS() {
+  const esIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const estaInstalada = window.navigator.standalone === true ||
+                        window.matchMedia('(display-mode: standalone)').matches;
+
+  if (esIOS && !estaInstalada) {
+    const guiaIOS = document.getElementById('instrucciones-ios');
+    if (guiaIOS) guiaIOS.hidden = false;
+  }
+}
+
+verificarEntornoIOS();
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js');
 }

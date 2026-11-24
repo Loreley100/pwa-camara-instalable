@@ -1,4 +1,4 @@
-const CACHE_NAME = 'camara-estatica-v1';
+const CACHE_NAME = 'camara-estatica-v2';
 
 const ARCHIVOS_A_PRECACHEAR = [
   './',

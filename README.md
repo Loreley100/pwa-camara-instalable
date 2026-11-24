@@ -40,6 +40,12 @@ URL esperada: https://loreley100.github.io/pwa-camara-instalable/
 - El aviso de la aplicación es informativo; el permiso nativo lo gestiona el navegador.
 - `beforeinstallprompt` permite ofrecer instalación propia; `prompt()` la dispara y `userChoice` informa el resultado.
 
-## Nota
+## Instalación
 
-Los ajustes específicos de iPhone (detección iOS, apple-touch-icon, instrucciones de Compartir) se omitieron por el alcance solicitado (Android/Chrome).
+- Android: instalación mediante el evento `beforeinstallprompt` y el botón cuando estén disponibles.
+- iPhone: instrucciones manuales Compartir → Agregar a inicio. Las instrucciones se ocultan cuando se abre en modo standalone.
+- El permiso de cámara puede solicitarse nuevamente al abrir la aplicación instalada; no debe asumirse que haberlo concedido en Safari evita otra solicitud.
+
+## Prueba pendiente
+
+Prueba pendiente en un iPhone real: instalación, apertura standalone, pre-permiso, alternancia y apagado.
